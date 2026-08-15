@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cafe Arab | مقهى عربي</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+
+<script src="firebase.js"></script>
+
+<script src="app.js"></script> 
+<body>
+
+    <header>
+
+        <div class="logo">
+            ☕ Cafe Arab
+        </div>
+
+        <div class="subtitle">
+            أكبر كافيه دردشة عربي
+        </div>
+
+    </header>
+
+    <div class="container">
+
+        <a href="guest.html" class="btn">
+            👤 دخول كضيف
+        </a>
+
+        <a href="register.html" class="btn">
+            📝 إنشاء حساب
+        </a>
+
+        <a href="login.html" class="btn">
+            🔑 تسجيل الدخول
+        </a>
+
+        <div class="card">
+
+            <h2>الكافيهات</h2>
+
+            <div class="room">
+                <span>🇪🇬 كافيه مصر</span>
+                <span class="online">🟢 452</span>
+            </div>
+
+            <div class="room">
+                <span>🇸🇦 كافيه السعودية</span>
+                <span class="online">🟢 318</span>
+            </div>
+
+            <div class="room">
+                <span>🇮🇶 كافيه العراق</span>
+                <span class="online">🟢 241</span>
+            </div>
+
+            <div class="room">
+                <span>🇲🇦 كافيه المغرب</span>
+                <span class="online">🟢 198</span>
+            </div>
+
+            <div class="room">
+                <span>🇩🇿 كافيه الجزائر</span>
+                <span class="online">🟢 171</span>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>إحصائيات الموقع</h2>
+
+            <div class="stats">
+                👥 المتصلون الآن: <b>1427</b><br><br>
+
+                💬 الرسائل اليوم: <b>82135</b><br><br>
+
+                🆕 أعضاء جدد: <b>57</b>
+            </div>
+
+        </div>
+
+        <div class="ads">
+            مساحة إعلانية
+        </div>
+
+    </div>
+
+    <footer>
+
+        © 2026 Cafe Arab - جميع الحقوق محفوظة
+
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>font-size:15px;
+}
+
+.container{
+padding:20px;
+max-width:500px;
+margin:auto;
+}
+
+.btn{
+display:block;
+width:100%;
+padding:16px;
+margin:15px 0;
+background:#d4af37;
+color:#1f1b18;
+text-decoration:none;
+text-align:center;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+background:#f3cf59;
+}
+
+.card{
+background:#2c2621;
+padding:18px;
+border-radius:15px;
+margin-top:25px;
+}
+
+.card h2{
+margin-bottom:15px;
+color:#d4af37;
+}
+
+.room{
+display:flex;
+justify-content:space-between;
+padding:12px 0;
+border-bottom:1px solid #444;
+}
+
+footer{
+margin-top:40px;
+padding:20px;
+text-align:center;
+font-size:14px;
+color:#aaa;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+☕ Cafe Arab
+</div>
+
+<div class="subtitle">
+أكبر كافيه دردشة عربي
+</div>
+
+</header>
+
+<div class="container">
+
+<a href="#" class="btn">
+👤 دخول كضيف
+</a>
+
+<a href="#" class="btn">
+📝 إنشاء حساب
+</a>
+
+<a href="#" class="btn">
+🔑 تسجيل الدخول
+</a>
+
+<div class="card">
+
+<h2>الكافيهات</h2>
+
+<div class="room">
+<span>🇪🇬 كافيه مصر</span>
+<span>🟢 452</span>
+</div>
+
+<div class="room">
+<span>🇸🇦 كافيه السعودية</span>
+<span>🟢 318</span>
+</div>
+
+<div class="room">
+<span>🇮🇶 كافيه العراق</span>
+<span>🟢 241</span>
+</div>
+
+<div class="room">
+<span>🇲🇦 كافيه المغرب</span>
+<span>🟢 198</span>
+</div>
+
+<div class="room">
+<span>🇩🇿 كافيه الجزائر</span>
+<span>🟢 171</span>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>إحصائيات</h2>
+
+<p>👥 المتصلون الآن: 1427</p>
+<br>
+<p>💬 الرسائل اليوم: 82135</p>
+<br>
+<p>🆕 أعضاء جدد: 57</p>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Cafe Arab
+
+</footer>
+
+</body>
+</html> 

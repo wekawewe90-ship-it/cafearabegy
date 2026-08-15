@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>دخول كضيف | Cafe Arab</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<header>
+
+    <div class="logo">
+        ☕ Cafe Arab
+    </div>
+
+    <div class="subtitle">
+        دخول كضيف
+    </div>
+
+</header>
+
+
+<div class="container">
+
+    <div class="card">
+
+        <h2 style="text-align:center;">
+            👤 دخول كضيف
+        </h2>
+
+        <p style="text-align:center;">
+            ادخل بياناتك البسيطة وابدأ المحادثة
+        </p>
+
+
+        <!-- الاسم -->
+
+        <input
+            type="text"
+            id="guestName"
+            class="input"
+            placeholder="اكتب اسمك"
+            maxlength="30"
+            autocomplete="off"
+        >
+
+
+        <br><br>
+
+
+        <!-- البلد -->
+
+        <select
+            id="guestCountry"
+            class="input"
+        >
+
+            <option value="">
+                🌍 اختر البلد
+            </option>
+
+            <option value="مصر">
+                🇪🇬 مصر
+            </option>
+
+            <option value="السعودية">
+                🇸🇦 السعودية
+            </option>
+
+            <option value="الإمارات">
+                🇦🇪 الإمارات
+            </option>
+
+            <option value="الكويت">
+                🇰🇼 الكويت
+            </option>
+
+            <option value="قطر">
+                🇶🇦 قطر
+            </option>
+
+            <option value="البحرين">
+                🇧🇭 البحرين
+            </option>
+
+            <option value="عمان">
+                🇴🇲 عمان
+            </option>
+
+            <option value="الأردن">
+                🇯🇴 الأردن
+            </option>
+
+            <option value="العراق">
+                🇮🇶 العراق
+            </option>
+
+            <option value="فلسطين">
+                🇵🇸 فلسطين
+            </option>
+
+            <option value="لبنان">
+                🇱🇧 لبنان
+            </option>
+
+            <option value="سوريا">
+                🇸🇾 سوريا
+            </option>
+
+            <option value="الجزائر">
+                🇩🇿 الجزائر
+            </option>
+
+            <option value="المغرب">
+                🇲🇦 المغرب
+            </option>
+
+            <option value="تونس">
+                🇹🇳 تونس
+            </option>
+
+            <option value="ليبيا">
+                🇱🇾 ليبيا
+            </option>
+
+            <option value="السودان">
+                🇸🇩 السودان
+            </option>
+
+            <option value="اليمن">
+                🇾🇪 اليمن
+            </option>
+
+            <option value="أخرى">
+                🌍 أخرى
+            </option>
+
+        </select>
+
+
+        <br><br>
+
+
+        <!-- الكافيه -->
+
+        <select
+            id="guestCafe"
+            class="input"
+        >
+
+            <option value="">
+                ☕ اختر الكافيه
+            </option>
+
+            <option value="Cafe Arab">
+                ☕ Cafe Arab
+            </option>
+
+            <option value="Cafe 2">
+                ☕ Cafe 2
+            </option>
+
+            <option value="Cafe 3">
+                ☕ Cafe 3
+            </option>
+
+        </select>
+
+
+        <br><br>
+
+
+        <!-- دخول -->
+
+        <button
+            type="button"
+            id="guestEnterBtn"
+            class="btn"
+        >
+            🚀 دخول الكافيه
+        </button>
+
+
+        <br>
+
+
+        <!-- رجوع -->
+
+        <a
+            href="login.html"
+            class="btn"
+        >
+            🔙 العودة لتسجيل الدخول
+        </a>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    © 2026 Cafe Arab
+
+</footer>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const nameInput =
+            document.getElementById(
+                "guestName"
+            );
+
+        const countrySelect =
+            document.getElementById(
+                "guestCountry"
+            );
+
+        const cafeSelect =
+            document.getElementById(
+                "guestCafe"
+            );
+
+        const enterBtn =
+            document.getElementById(
+                "guestEnterBtn"
+            );
+
+
+        enterBtn.addEventListener(
+            "click",
+            () => {
+
+                const name =
+                    nameInput.value.trim();
+
+                const country =
+                    countrySelect.value;
+
+                const cafe =
+                    cafeSelect.value;
+
+
+                // =========================
+                // التحقق من البيانات
+                // =========================
+
+                if (!name) {
+
+                    alert(
+                        "👤 من فضلك اكتب اسمك أولًا."
+                    );
+
+                    nameInput.focus();
+
+                    return;
+
+                }
+
+
+                if (!country) {
+
+                    alert(
+                        "🌍 من فضلك اختر بلدك."
+                    );
+
+                    countrySelect.focus();
+
+                    return;
+
+                }
+
+
+                if (!cafe) {
+
+                    alert(
+                        "☕ من فضلك اختر الكافيه."
+                    );
+
+                    cafeSelect.focus();
+
+                    return;
+
+                }
+
+
+                // =========================
+                // إنشاء بيانات الضيف
+                // =========================
+
+                const guestData = {
+
+                    name: name,
+
+                    country: country,
+
+                    cafe: cafe,
+
+                    isGuest: true,
+
+                    guestId:
+                        "guest_" +
+                        Date.now() +
+                        "_" +
+                        Math.random()
+                            .toString(36)
+                            .substring(2, 9)
+
+                };
+
+
+                // =========================
+                // حفظ بيانات الضيف
+                // =========================
+
+                sessionStorage.setItem(
+                    "cafeArabGuest",
+                    JSON.stringify(
+                        guestData
+                    )
+                );
+
+
+                // =========================
+                // الدخول للشات العام
+                // =========================
+
+                window.location.href =
+                    "chat.html";
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

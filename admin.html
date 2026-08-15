@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Cafe Arab | لوحة الإدارة
+    </title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            background: #f4f6f8;
+
+            color: #222;
+
+        }
+
+        header {
+
+            background: #222;
+
+            color: #fff;
+
+            padding: 18px;
+
+            text-align: center;
+
+        }
+
+        header h1 {
+
+            margin:
+                0 0 6px;
+
+            font-size: 24px;
+
+        }
+
+        header p {
+
+            margin: 0;
+
+            opacity: .8;
+
+        }
+
+        .container {
+
+            max-width: 1100px;
+
+            margin: 20px auto;
+
+            padding:
+                0 15px;
+
+        }
+
+        #adminMessage {
+
+            background: #fff3cd;
+
+            color: #664d03;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            margin-bottom: 15px;
+
+            display: none;
+
+        }
+
+        .stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(180px, 1fr)
+                );
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+
+        }
+
+        .stat {
+
+            background: #fff;
+
+            border-radius: 14px;
+
+            padding: 20px;
+
+            box-shadow:
+                0 2px 10px
+                rgba(0,0,0,.06);
+
+        }
+
+        .stat .icon {
+
+            font-size: 28px;
+
+        }
+
+        .stat .number {
+
+            display: block;
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            margin-top: 8px;
+
+        }
+
+        .stat .label {
+
+            color: #777;
+
+            margin-top: 5px;
+
+        }
+
+        .panel {
+
+            background: #fff;
+
+            border-radius: 14px;
+
+            padding: 20px;
+
+            box-shadow:
+                0 2px 10px
+                rgba(0,0,0,.06);
+
+            margin-bottom: 20px;
+
+        }
+
+        .panel h2 {
+
+            margin-top: 0;
+
+        }
+
+        .toolbar {
+
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 15px;
+
+        }
+
+        .toolbar input {
+
+            flex: 1;
+
+            min-width: 220px;
+
+            padding: 12px;
+
+            border:
+                1px solid #ddd;
+
+            border-radius: 10px;
+
+            font-size: 15px;
+
+        }
+
+        button {
+
+            border: 0;
+
+            border-radius: 10px;
+
+            padding:
+                11px 16px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+        }
+
+        #refreshBtn {
+
+            background: #222;
+
+            color: #fff;
+
+        }
+
+        #logoutBtn {
+
+            background: #b42318;
+
+            color: #fff;
+
+        }
+
+        .tableWrap {
+
+            overflow-x: auto;
+
+        }
+
+        table {
+
+            width: 100%;
+
+            border-collapse:
+                collapse;
+
+            min-width: 650px;
+
+        }
+
+        th,
+        td {
+
+            padding:
+                12px 10px;
+
+            border-bottom:
+                1px solid #eee;
+
+            text-align: right;
+
+            vertical-align: top;
+
+        }
+
+        th {
+
+            background: #fafafa;
+
+        }
+
+        .online {
+
+            color: #16803c;
+
+            font-weight: bold;
+
+        }
+
+        .offline {
+
+            color: #777;
+
+        }
+
+        .uid {
+
+            font-size: 11px;
+
+            color: #888;
+
+            word-break:
+                break-all;
+
+        }
+
+        #adminArea {
+
+            display: none;
+
+        }
+
+        #loading {
+
+            padding:
+                15px 0;
+
+            color: #777;
+
+        }
+
+        /* =================================
+           تفاصيل المستخدم
+        ================================= */
+
+        #userDetailsPanel {
+
+            display: none;
+
+        }
+
+        .userDetails {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(180px, 1fr)
+                );
+
+            gap: 12px;
+
+        }
+
+        .detailItem {
+
+            background: #f7f8fa;
+
+            border-radius: 10px;
+
+            padding: 14px;
+
+        }
+
+        .detailLabel {
+
+            display: block;
+
+            color: #777;
+
+            font-size: 13px;
+
+            margin-bottom: 6px;
+
+        }
+
+        .detailValue {
+
+            font-weight: bold;
+
+            word-break:
+                break-word;
+
+        }
+
+        .closeDetails {
+
+            margin-top: 15px;
+
+            background: #666;
+
+            color: #fff;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>
+        ☕ Cafe Arab — لوحة الإدارة
+    </h1>
+
+    <p>
+        إدارة ومتابعة الموقع
+    </p>
+
+</header>
+
+
+<div class="container">
+
+    <div id="adminMessage"></div>
+
+
+    <div id="adminArea">
+
+
+        <!-- =================================
+             الإحصائيات
+        ================================= -->
+
+        <div class="stats">
+
+
+            <div class="stat">
+
+                <div class="icon">
+                    👥
+                </div>
+
+                <span
+                    id="usersCount"
+                    class="number"
+                >
+                    0
+                </span>
+
+                <div class="label">
+                    إجمالي المستخدمين
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="icon">
+                    🟢
+                </div>
+
+                <span
+                    id="onlineCount"
+                    class="number"
+                >
+                    0
+                </span>
+
+                <div class="label">
+                    المتصلون الآن
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="icon">
+                    💬
+                </div>
+
+                <span
+                    id="messagesCount"
+                    class="number"
+                >
+                    —
+                </span>
+
+                <div class="label">
+                    إجمالي رسائل الشات العام
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="icon">
+                    🔔
+                </div>
+
+                <span
+                    id="notificationsCount"
+                    class="number"
+                >
+                    —
+                </span>
+
+                <div class="label">
+                    الإشعارات غير المقروءة
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================
+             تفاصيل المستخدم
+        ================================= -->
+
+        <div
+            class="panel"
+            id="userDetailsPanel"
+        >
+
+            <h2>
+                👤 تفاصيل المستخدم
+            </h2>
+
+
+            <div class="userDetails">
+
+
+                <div class="detailItem">
+
+                    <span class="detailLabel">
+                        الاسم
+                    </span>
+
+                    <div
+                        id="detailName"
+                        class="detailValue"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="detailItem">
+
+                    <span class="detailLabel">
+                        Username
+                    </span>
+
+                    <div
+                        id="detailUsername"
+                        class="detailValue"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="detailItem">
+
+                    <span class="detailLabel">
+                        الدولة
+                    </span>
+
+                    <div
+                        id="detailCountry"
+                        class="detailValue"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="detailItem">
+
+                    <span class="detailLabel">
+                        الحالة
+                    </span>
+
+                    <div
+                        id="detailStatus"
+                        class="detailValue"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="detailItem">
+
+                    <span class="detailLabel">
+                        UID
+                    </span>
+
+                    <div
+                        id="detailUid"
+                        class="detailValue uid"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                id="closeDetailsBtn"
+                class="closeDetails"
+            >
+                إغلاق التفاصيل
+            </button>
+
+        </div>
+
+
+        <!-- =================================
+             المستخدمون
+        ================================= -->
+
+        <div class="panel">
+
+            <h2>
+                👤 المستخدمون
+            </h2>
+
+
+            <div class="toolbar">
+
+                <input
+                    id="userSearch"
+                    type="search"
+                    placeholder="ابحث بالاسم أو username أو UID"
+                >
+
+
+                <button id="refreshBtn">
+                    🔄 تحديث
+                </button>
+
+
+                <button id="logoutBtn">
+                    🚪 تسجيل الخروج
+                </button>
+
+            </div>
+
+
+            <div id="loading">
+                جاري تحميل المستخدمين...
+            </div>
+
+
+            <div class="tableWrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                الاسم
+                            </th>
+
+                            <th>
+                                Username
+                            </th>
+
+                            <th>
+                                الدولة
+                            </th>
+
+                            <th>
+                                الحالة
+                            </th>
+
+                            <th>
+                                UID
+                            </th>
+
+                            <th>
+                                إجراء
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="usersTable"
+                    ></tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script
+    type="module"
+    src="admin.js"
+></script>
+
+</body>
+
+</html>

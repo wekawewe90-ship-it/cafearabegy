@@ -1,0 +1,376 @@
+/* ===========================
+   Cafe Arab - style.css
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma, Arial, sans-serif;
+}
+
+body{
+    background:#1b1714;
+    color:#ffffff;
+    direction:rtl;
+}
+
+/* Header */
+
+header{
+    background:#2c241c;
+    padding:20px;
+    text-align:center;
+    border-bottom:2px solid #d4af37;
+}
+
+.logo{
+    font-size:34px;
+    font-weight:bold;
+    color:#d4af37;
+}
+
+.subtitle{
+    color:#ddd;
+    margin-top:8px;
+    font-size:15px;
+}
+
+/* Container */
+
+.container{
+    width:95%;
+    max-width:500px;
+    margin:auto;
+    padding:20px 0;
+}
+
+/* Buttons */
+
+.btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:#d4af37;
+    color:#1b1714;
+    padding:16px;
+    margin:15px 0;
+    border-radius:12px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+
+    background:#f2c94c;
+    transform:translateY(-2px);
+
+}
+
+/* Cards */
+
+.card{
+
+    background:#2c241c;
+    border-radius:15px;
+    padding:18px;
+    margin-top:25px;
+
+}
+
+.card h2{
+
+    color:#d4af37;
+    margin-bottom:15px;
+
+}
+
+/* Rooms */
+
+.room{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px solid #444;
+
+}
+
+.room:last-child{
+
+    border:none;
+
+}
+
+/* Statistics */
+
+.stats{
+
+    line-height:2;
+
+}
+
+/* Footer */
+
+footer{
+
+    text-align:center;
+    color:#999;
+    padding:25px;
+
+}
+
+/* Online Badge */
+
+.online{
+
+    color:#00ff66;
+    font-weight:bold;
+
+}
+
+/* Advertisement */
+
+.ads{
+
+    margin-top:25px;
+
+    background:#3a3128;
+
+    border:1px dashed #d4af37;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    padding:20px;
+
+    color:#d4af37;
+
+}
+
+/* Responsive */
+
+@media(max-width:600px){
+
+.logo{
+
+font-size:28px;
+
+}
+
+.btn{
+
+font-size:17px;
+
+}
+
+.card{
+
+padding:15px;
+
+}
+
+}
+/* Login */
+
+.input{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:10px;
+
+outline:none;
+
+font-size:16px;
+
+background:#3b3229;
+
+color:#fff;
+
+}
+
+.input::placeholder{
+
+color:#bbb;
+
+}
+
+button{
+
+border:none;
+
+cursor:pointer;
+
+}
+
+.sendBox{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:10px;
+
+}
+
+#messageInput{
+
+flex:1;
+
+}
+
+#imageBtn{
+
+width:45px;
+
+height:45px;
+
+border:none;
+
+border-radius:50%;
+
+background:#d4af37;
+
+color:#000;
+
+font-size:20px;
+
+cursor:pointer;
+
+}
+
+#sendBtn{
+
+width:55px;
+
+height:45px;
+
+border:none;
+
+border-radius:25px;
+
+background:#d4af37;
+
+color:#000;
+
+cursor:pointer;
+
+}
+/* ===========================
+   Chat
+=========================== */
+
+#messages{
+
+height:420px;
+
+overflow-y:auto;
+
+background:#111;
+
+border-radius:12px;
+
+padding:15px;
+
+margin-bottom:15px;
+
+border:1px solid #444;
+
+}
+
+.message{
+
+max-width:80%;
+
+padding:10px 15px;
+
+margin:10px 0;
+
+border-radius:15px;
+
+word-wrap:break-word;
+
+}
+
+.mine{
+
+background:#d4af37;
+
+color:#111;
+
+margin-right:auto;
+
+}
+
+.other{
+
+background:#333;
+
+color:#fff;
+
+margin-left:auto;
+
+}
+
+.sender{
+
+font-size:12px;
+
+opacity:.7;
+
+margin-bottom:5px;
+
+}
+
+.message img{
+
+max-width:220px;
+
+border-radius:12px;
+
+display:block;
+
+}
+.messages{
+    height:420px;
+    overflow-y:auto;
+    background:#111;
+    border-radius:12px;
+    padding:15px;
+    margin-bottom:15px;
+}
+
+.sendBox{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.sendBox .input{
+    flex:1;
+    margin:0;
+}
+
+.circleBtn{
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#d4af37;
+    color:#000;
+    font-size:22px;
+    cursor:pointer;
+    flex-shrink:0;
+}

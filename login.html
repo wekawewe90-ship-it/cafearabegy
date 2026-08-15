@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>تسجيل الدخول | Cafe Arab</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        ☕ Cafe Arab
+    </div>
+
+    <div class="subtitle">
+        مرحباً بعودتك
+    </div>
+
+</header>
+
+
+<div class="container">
+
+    <div class="card">
+
+        <h2 style="text-align:center;">
+            تسجيل الدخول
+        </h2>
+
+
+        <form id="loginForm">
+
+
+            <input
+                type="email"
+                id="email"
+                placeholder="البريد الإلكتروني"
+                class="input"
+                required
+            >
+
+
+            <br><br>
+
+
+            <input
+                type="password"
+                id="password"
+                placeholder="كلمة المرور"
+                class="input"
+                required
+            >
+
+
+            <br><br>
+
+
+            <button
+                type="submit"
+                class="btn"
+            >
+                🔑 تسجيل الدخول
+            </button>
+
+
+        </form>
+
+
+        <br>
+
+
+        <!-- =================================
+             استعادة كلمة المرور
+        ================================== -->
+
+        <div style="text-align:center;margin-top:10px;">
+
+            <a
+                href="#"
+                id="forgotPassword"
+                style="
+                    color:#d4af37;
+                    text-decoration:none;
+                    cursor:pointer;
+                "
+            >
+                🔐 نسيت كلمة المرور؟
+            </a>
+
+        </div>
+
+
+        <br>
+
+
+        <!-- =================================
+             دخول كضيف
+        ================================== -->
+
+        <a
+            href="guest.html"
+            class="btn"
+        >
+            👤 دخول كضيف
+        </a>
+
+
+        <br>
+
+
+        <!-- =================================
+             إنشاء حساب
+        ================================== -->
+
+        <a
+            href="register.html"
+            class="btn"
+        >
+            📝 إنشاء حساب جديد
+        </a>
+
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    © 2026 Cafe Arab
+
+</footer>
+
+
+<script src="app.js"></script>
+
+<script
+    type="module"
+    src="login.js"
+></script>
+
+
+</body>
+
+</html>

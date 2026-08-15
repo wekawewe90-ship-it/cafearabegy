@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>إنشاء حساب | Cafe Arab</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+☕ Cafe Arab
+</div>
+
+<div class="subtitle">
+أنشئ حسابك وابدأ الدردشة
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2 style="text-align:center;">إنشاء حساب جديد</h2>
+
+<form id="registerForm">
+<input
+type="text"
+id="name"
+class="input"
+placeholder="الاسم الظاهر (مثال: أحمد محمد)"
+required>
+
+<br><br>
+
+<input
+type="text"
+id="username"
+class="input"
+placeholder="@ اسم المستخدم (مثال: ahmed)"
+required>
+
+<br><br>
+
+<input
+type="email"
+id="email"
+class="input"
+placeholder="البريد الإلكتروني"
+required>
+
+<br><br>
+
+<input
+type="password"
+id="password"
+class="input"
+placeholder="كلمة المرور"
+required>
+
+<br><br>
+
+<input
+type="password"
+id="confirmPassword"
+class="input"
+placeholder="تأكيد كلمة المرور"
+required>
+
+<br><br>
+
+<label style="color:#ddd;font-size:15px;">
+الصورة الشخصية
+</label>
+
+<br><br>
+
+<input
+type="file"
+class="input">
+
+<br><br>
+
+<label style="color:#ddd;display:flex;align-items:center;gap:8px;">
+
+<input type="checkbox" required>
+
+أوافق على الشروط والأحكام
+
+</label>
+
+<br><br>
+
+<button class="btn">
+
+📝 إنشاء الحساب
+
+</button>
+
+</form>
+
+<br>
+
+<a href="login.html" class="btn">
+
+🔑 لدي حساب بالفعل
+
+</a>
+
+<a href="guest.html" class="btn">
+
+👤 دخول كضيف
+
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Cafe Arab
+
+</footer>
+
+<script src="app.js"></script>
+<script type="module" src="register.js"></script>
+</body>
+
+</html>

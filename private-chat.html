@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Cafe Arab | محادثة خاصة</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+☕ Cafe Arab
+
+</div>
+
+<div class="subtitle">
+
+المحادثة الخاصة
+
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<div
+style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+">
+
+<h2 id="chatUser">
+
+👤 المستخدم
+
+</h2>
+
+<button
+id="backBtn"
+class="btn"
+style="
+width:auto;
+padding:10px 18px;
+">
+
+⬅ رجوع
+
+</button>
+
+</div>
+<hr>
+
+<div
+id="privateMessages"
+class="messages">
+
+</div>
+
+<div class="sendBox">
+
+<button
+id="imageBtn"
+class="circleBtn">
+
+📷
+
+</button>
+
+  <button
+    id="videoBtn"
+    class="circleBtn">
+
+🎥
+
+</button>
+  
+<button
+    id="audioBtn"
+    class="circleBtn">
+
+🎤
+
+</button>
+
+<input
+    type="file"
+    id="audioInput"
+    accept="audio/*"
+    hidden>
+<input
+    type="file"
+    id="videoInput"
+    accept="video/*"
+    hidden>
+
+<input
+type="file"
+id="imageInput"
+accept="image/*"
+hidden>
+
+<input
+id="messageInput"
+class="input"
+type="text"
+placeholder="اكتب رسالة خاصة...">
+
+<button
+id="sendBtn"
+class="circleBtn">
+
+➤
+
+</button>
+
+</div>
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Cafe Arab
+
+</footer>
+
+  <script type="module" src="privateChat.js?v=audio1"></script>
+  
+</body>
+
+</html>
